@@ -4,45 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/grey"
     tools:context=".SplashActivity">
 
-    <ImageView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/bg_splash"
-        android:scaleType="centerCrop"/>
-    
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="@dimen/_50sdp"
-        android:layout_marginStart="@dimen/_20sdp">
+        android:scrollbars="none">
 
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnGetStarted"
-            android:text="@string/get_started"
-            android:background="@drawable/btn_bg"
-            android:textColor="@color/white"
-            android:paddingStart="@dimen/_20sdp"
-            android:paddingEnd="@dimen/_20sdp"
-            android:visibility="invisible"
+            android:orientation="vertical">
 
-            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/all_recipies"
+                android:textSize="@dimen/_20ssp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/gilroy_bold"
+                android:padding="@dimen/_10sdp"/>
 
-        <ProgressBar
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:outlineAmbientShadowColor="@color/brown"
-            android:id="@+id/loader"
-            android:layout_gravity="center"/>
-    </FrameLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:elevation="@dimen/_10sdp">
 
+                <SearchView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/ThemeOverlay.Search."
+                    android:queryHint="search for recipes"
+                    android:iconifiedByDefault="false"
+                    android:id="@+id/search_view"
+                    android:background="@drawable/search_bg"/>
 
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rv_main_category"
+                tools:itemCount="1"
+                android:layout_margin="@dimen/_10sdp"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_rv_main_category"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/category_name"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/gilroy_bold"
+                android:paddingStart="@dimen/_10sdp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rv_sub_category"
+                tools:itemCount="1"
+                android:layout_margin="@dimen/_10sdp"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_rv_sub_category"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>

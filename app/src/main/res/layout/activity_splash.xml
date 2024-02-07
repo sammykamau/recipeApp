@@ -19,6 +19,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="@dimen/_50sdp"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
         android:layout_marginStart="@dimen/_20sdp">
 
         <Button
@@ -30,7 +32,7 @@
             android:textColor="@color/white"
             android:paddingStart="@dimen/_20sdp"
             android:paddingEnd="@dimen/_20sdp"
-            android:visibility="invisible"
+            android:visibility="visible"
 
             />
 
