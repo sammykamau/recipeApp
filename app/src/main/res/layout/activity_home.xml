@@ -56,6 +56,7 @@
                 tools:listitem="@layout/item_rv_main_category"/>
 
             <TextView
+                android:id="@+id/tvCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/category_name"

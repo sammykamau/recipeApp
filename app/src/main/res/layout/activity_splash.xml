@@ -32,7 +32,7 @@
             android:textColor="@color/white"
             android:paddingStart="@dimen/_20sdp"
             android:paddingEnd="@dimen/_20sdp"
-            android:visibility="visible"
+            android:visibility="invisible"
 
             />
 
